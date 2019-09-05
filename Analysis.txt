@@ -1,0 +1,84 @@
+
+title: "Runtime Analysis for Unscramble Computer Science Problems"
+author: "Feilong Deng"
+date: "6/10/2019"
+
+
+Task 0
+
+In this task, the runtime is O(1), because the operations are not dependent on iteration.
+
+
+
+Task 1
+
+Runtime: O(n). 
+Analysis: O(n) is for the first "for" loop, which is run through the texts and calls list. 
+the second for loop, that is the nested one, it's O(2). 
+Therefore, the final time complexity of this solution becomes O(n*2), which can be approximated as O(n) because constant can be dropped from the concluded worst can complexity.
+
+
+
+Task 2
+
+
+Runtime: O(nlog(n))
+-O(n): A for-loop is run through the calls list. For each iteration, we are doing a containment check on a sublist and appending the code if it is not yet present in the said list. Checking for containment in lists is O(n), bringing the runtime of the for loop to O(n^2)
+-O(1): one get(), it doesn’t matter what "per_num" is. This piece of code takes a constant amount of time to run. It’s not dependent on the size of "per_num".
+-O(nlog(n)): one sorted() has a worst time complexity of O(nlog(n)).
+O(n + 1 + nlog(n)) --> O(n(1+log(n))) --> O(nlog(n)).
+
+
+Task 3
+
+Part A: 
+
+Runtime: O(nlog(n))
+-O(n): O(n): A for-loop is run through the calls list. For each iteration, we are doing a containment check on a sublist and appending the code if it is not yet present in the said list. Inside the loop, there is one get(), which has O(1) runtime, add them together. The runtime is O(n).
+-O(nlog(n)): one sorted() has a worst time complexity of O(nlog(n)).
+O(n + nlog(n)) --> O(n(1+log(n))) --> O(nlog(n)).
+
+Part B: 
+
+Runtime: O(n)
+-O(n): O(n): A for-loop is run through the prefix_dict. For each iteration, we are doing a containment check on the prefix_dict, the runtime is O(n).
+
+The final runtime combined part A and part B is O(n + nlog(n)).
+
+Task 4
+
+
+
+Runtime: O(n)
+Analysis: The first and third for-loops are run through the calls list. For each iteration, we are doing a containment check on the calls. It is O(n). Inside the loop, there is one get(), which has O(1) runtime, add them together. The runtime is O(n).
+The second for-loop is run through the texts list. For each iteration, we are doing a containment check on the texts, it is O(n). After using the get(), the runtime is O(n) as well as the first loop.
+There are also contained the sorted, which is O(nlog(n)). The last part is the for-loop, which is run through the sort_dict list. For each iteration, we are doing a containment check on the sort_dict. It is O(n).
+O(n+n+n+nlog(n)+n) = O(4n+nlog(n)) = O(n(4 + log(n)))--> O(nlog(n)).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
